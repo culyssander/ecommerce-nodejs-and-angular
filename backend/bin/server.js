@@ -1,6 +1,6 @@
 'use strict'
 
-const app = require('../rcs/app');
+const app = require('../src/app');
 const debug = require('debug')('nodestr:server');
 const http = require('http');
 
