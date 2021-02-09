@@ -33,5 +33,6 @@ app.use('/', indexRouter);
 // app.use('/users', userRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/categories', categoryRouter);
+app.use('/api/v1/products', productRouter);
 
 module.exports = app

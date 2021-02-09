@@ -1,6 +1,6 @@
 'use strict'
 
-const repository = require('../../models/repository/categoryRepository');
+const repository = require('../../models/repository/productRepository');
 
 exports.getAll = async(req, res, next) => {
     let page = (req.query.page !== undefined && req.query.page !== 0) ? req.query.page : 1; // set the current page number
@@ -34,10 +34,31 @@ exports.getAll = async(req, res, next) => {
     }
 }
 
-exports.getById = async(req, res, next) => {
-    const categoryId = req.params.id;
+exports.getByCategory = async(req, res, next) => {
+    const category = req.params.category;
     try{
-        await repository.getById(categoryId, (err ,result)=>{
+        await repository.getById(category, (err ,result)=>{
+            
+            if (err)  res.send(err);  
+
+            if(result == null) {
+                res.status(404).json({
+                    data: "not found"
+                });
+                return;
+            }
+            res.send(result);
+        });
+    }catch(e){
+        console.log("Error: " + e);
+        res.status(500).send({message: 'Falha ao processar a requisação.'});
+    }
+}
+
+exports.getById = async(req, res, next) => {
+    const productId = req.params.id;
+    try{
+        await repository.getById(productId, (err ,result)=>{
             
             if (err)  res.send(err);  
 
@@ -70,7 +91,7 @@ exports.post = async (req, res, next) => {
             return;
         }
         res.json({
-            message:"Category added successfully!",
+            message:"Product added successfully!",
             data:result
         });
        });
@@ -96,7 +117,7 @@ exports.put = async (req, res, next) => {
                 return;
             }
             res.json({
-                message:"Category updated successfully!",
+                message:"Product updated successfully!",
                 data:result
             });
         });        
