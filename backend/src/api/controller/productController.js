@@ -24,8 +24,7 @@ exports.getAll = async(req, res, next) => {
 
             res.send({
                 count: result.length,
-                categories: result.slice(startValue, endValue)
-                // categories: result.sort((a,b) => { return a.id - b.id}).slice(startValue, endValue)
+                products: result.slice(startValue, endValue)
             });
         });
     }catch(e){

@@ -4,6 +4,7 @@ const conn = require('../database/db');
 const Product = require('../domain/productModel');
 
 Product.create = async(product, result) => {
+  console.log(product);
   const sql = 'INSERT INTO product SET ?';
     conn.query(sql, product, (err, res) => {
         if(err){
