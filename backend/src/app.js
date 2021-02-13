@@ -8,7 +8,7 @@ const logger = require('morgan');
 const cors = require('cors');
 
 const indexRouter = require('./api/routes/index');
-// const userRouter = require('./routes/userRoutes');
+const userRouter = require('./api/routes/userRoutes');
 const productRouter = require('./api/routes/productRoutes');
 const categoryRouter = require('./api/routes/categoryRoutes');
 
@@ -30,7 +30,7 @@ app.use(express.urlencoded({extended: true}));
 // app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-// app.use('/users', userRouter);
+app.use('/api/v1/users', userRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/categories', categoryRouter);
 app.use('/api/v1/products', productRouter);

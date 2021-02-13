@@ -89,7 +89,7 @@ exports.post = async (req, res, next) => {
             res.send(err);  
             return;
         }
-        res.json({
+        res.status(201).json({
             message:"Product added successfully!",
             data:result
         });
