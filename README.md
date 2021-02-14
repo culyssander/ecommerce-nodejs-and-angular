@@ -2,10 +2,10 @@
 
 Main object is the development an online ecommerce sales aplications, where we have products available with the possibility of marking purcharses, user registration and sales list.
 
-Prerequerement to run this app locally
-Nodejs - `https://nodejs.org`
-Angular CLI - `https://cli.angular.io/`
-database_script - `https://github.com/culyssander/script-sql/blob/master/mega_shop.sql`
+## Prerequerement to run this app locally
+### Nodejs - `https://nodejs.org`
+### Angular CLI - `https://cli.angular.io/`
+### database_script - `https://github.com/culyssander/script-sql/blob/master/mega_shop.sql`
  
  ## Installation
 
