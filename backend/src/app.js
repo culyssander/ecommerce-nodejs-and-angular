@@ -11,6 +11,7 @@ const indexRouter = require('./api/routes/index');
 const userRouter = require('./api/routes/userRoutes');
 const productRouter = require('./api/routes/productRoutes');
 const categoryRouter = require('./api/routes/categoryRoutes');
+const orderRouter = require('./api/routes/orderRoutes');
 
 const app = express();
 
@@ -31,8 +32,8 @@ app.use(express.urlencoded({extended: true}));
 
 app.use('/', indexRouter);
 app.use('/api/v1/users', userRouter);
-app.use('/api/v1/products', productRouter);
 app.use('/api/v1/categories', categoryRouter);
 app.use('/api/v1/products', productRouter);
+app.use('/api/v1/orders', orderRouter);
 
 module.exports = app

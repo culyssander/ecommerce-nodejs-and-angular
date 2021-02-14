@@ -3,7 +3,6 @@
 const repository = require('../../models/repository/userRepository');
 const Validator = require('../../models/util/validator');
 const bcrypt = require('bcrypt');
-const saltRounds = 10;
 
 exports.getAll = async (req, res, next) => {
 
@@ -76,7 +75,7 @@ exports.post = async (req, res, next) => {
             return;
         }
 
-        req.body.password = bcrypt.hashSync(req.body.password, saltRounds);
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
 
         await repository.create(req.body, (err, result) => {
             if(err) {

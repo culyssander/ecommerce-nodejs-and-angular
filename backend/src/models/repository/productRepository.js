@@ -9,7 +9,7 @@ Product.create = async(product, result) => {
     conn.query(sql, product, (err, res) => {
         if(err){
             console.log('Error: ', err);
-            result(err, null);
+            result(null, err);
             return;
         }
 
@@ -19,12 +19,12 @@ Product.create = async(product, result) => {
 }
 
 Product.update = async(id, product, result) => {
-  const sql = 'UPDATE product SET title = ? WHERE id = ?';
+  const sql = 'UPDATE product SET title = ?, image = ?, description = ?, price = ?, quantity = ?, short_descr = ? category_id = ? WHERE id = ?';
 
   conn.query(sql, [product, id], (err, res) => {
     if(err){
       console.log('Error: ', err);
-      result(err, null);
+      result(null, err);
       return;
   }
 
@@ -39,7 +39,7 @@ Product.delete = async(id, result) => {
   conn.query(sql, id, (err, res) => {
     if(err){
       console.log('Error: ', err);
-      result(err, null);
+      result(null, err);
       return;
   }
 
@@ -49,7 +49,7 @@ Product.delete = async(id, result) => {
 }
 
 Product.getAll = async result => {
-  const sql = 'SELECT * FROM product order by id';
+  const sql = `SELECT * FROM product ORDER BY id`;
     conn.query(sql, (err, res) => {
       if (err) {
         console.log("error: ", err);
