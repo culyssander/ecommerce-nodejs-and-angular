@@ -20,11 +20,11 @@ Run `ng serves` to make the project go up locally. Access the url `http: // loca
 ## Simulating the Backend
 To execute the backend, enter the project backend and type the command `npm start` to start the server on port 3000 with this a server will be initialized at the url `http: // localhost: 3000 /`, after initialization it will be possible to make http requests.
 
-Endpoints
-`http: // localhost: 3000 / api / v1 / users`
-`http: // localhost: 3000 / api / v1 / categories`
-`http: // localhost: 3000 / api / v1 / products`
-`http: // localhost: 3000 / api / v1 / orders `
+Endpoints<br>
+`http: // localhost: 3000 / api / v1 / users`<br>
+`http: // localhost: 3000 / api / v1 / categories`<br>
+`http: // localhost: 3000 / api / v1 / products`<br>
+`http: // localhost: 3000 / api / v1 / orders `<br>
 
 ## Generating component
 
