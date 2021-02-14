@@ -1,4 +1,4 @@
-# Fullstack application with nodejs(backend) and angular(fronted)
+# Fullstack application with nodejs(backend) and angular(fronted) - NOT FINISH
 
 Main object is the development an online ecommerce sales aplications, where we have products available with the possibility of marking purcharses, user registration and sales list.
 
