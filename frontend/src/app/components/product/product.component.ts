@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { ProductService } from './product.service';
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  products: any[] = [];
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    // this.findAll();
   }
 
+  findAll(): void {
+    this.productService.findAll().subscribe({
+      next: products => {
+        console.log(products)
+        // this.products = products;
+      },
+      error: err => console.log('Error', err)
+      
+    });
+  }
 }
